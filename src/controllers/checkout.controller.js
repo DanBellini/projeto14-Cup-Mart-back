@@ -21,7 +21,7 @@ async function getCheckout (req, res){
 };
 
 async function checkoutConfirm (req, res) {
-    const { name, email, endress, endressNumber, products, value, payment } = req.body;
+    const { name, email, endress, endressNumber, city, products, value, payment } = req.body;
 
     const haveProducts = (products.length > 0);
 
@@ -35,6 +35,7 @@ async function checkoutConfirm (req, res) {
         const checkoutConfirmed = db.collection('sales').insertOne({
             name,
             email,
+            city,
             endress,
             endressNumber,
             value,
