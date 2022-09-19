@@ -4,7 +4,6 @@ import db from "../database/db.js";
 async function productsList (req,res){
     try {
         const allProducts = await db.collection('products').find().toArray();
-        console.log(allProducts)
         res.status(200).send(allProducts);
         return
     } catch (error) {

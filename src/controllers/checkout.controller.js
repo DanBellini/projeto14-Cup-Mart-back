@@ -11,6 +11,7 @@ async function getCheckout (req, res){
         delete checkout._id;
         delete checkout.password;
 
+
         res.status(200).send(checkout);
 
     } catch (error) {
