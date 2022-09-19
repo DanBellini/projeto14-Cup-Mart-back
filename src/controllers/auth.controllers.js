@@ -46,7 +46,7 @@ async function loginUser (req, res) {
         const validationSchema = authLoginSchema.validate(login);
 
         if(validationSchema.error){
-            return res.status(422).send("Digite o email e a senha");
+            return res.status(422).send("Digite o email e a senha corretos");
         }
 
         const user = await db.collection('users').findOne({ email: login.email});
